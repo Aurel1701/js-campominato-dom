@@ -4,7 +4,7 @@ function print(params) {
     document.querySelector('.container').innerHTML = ''
 
     let difficoltà = document.querySelector('#difficoltà').value
-    console.log(difficoltà);
+    
 
 // assegno le celle a seconda della difficoltà 
 
@@ -19,6 +19,7 @@ function print(params) {
         for (let y = 0; y < 16; y++) {
             
         }
+        colorRed(100)
         Bomb(100)
        
         
@@ -84,6 +85,27 @@ function colorBlue() {
         });
 
   }
+}
+
+function colorRed() {
+    let canpush = true;
+    let x = cells
+    for (let b = 0; b < arrayBomb.length; b++) {
+        if (arrayBomb !== x) {
+            arrayBomb.addEventListener('click', function () {
+                this.style.backgroundColor = 'red'
+       
+               });
+            canpush = false
+        } else {
+            canpush = true;
+        }
+    }
+    if (canpush) {
+        arrayBomb.push(x)
+    }
+    console.log(arrayBomb);
+    canpush = false;
 }
 
 
