@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+}
+.title{
+    display: flex;
+}
+.title h1{
+    display: flex;
+    align-items: center;
+}
+.difficoltà{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.difficoltà h4{
+    display: flex;
+    align-items: center;
+}
+main{
+    background-color: rgba(127, 255, 212, 1);
+    height: 750px;
+
+}
+.cells{
+    width: calc(100% / 10);
+    border: 1px solid black;
+    aspect-ratio: 1 / 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  footer{
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+.container{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+   
+}
