@@ -19,8 +19,8 @@ function print(params) {
         for (let y = 0; y < 16; y++) {
             
         }
-        colorRed(100)
-        Bomb(100)
+        
+        var arrayBombe = Bomb(100)
        
         
 // difficoltà media
@@ -32,7 +32,7 @@ function print(params) {
             
 
         }
-        Bomb(81)
+        var arrayBombe = Bomb(81)
 
 // difficoltà alta
 
@@ -42,11 +42,11 @@ function print(params) {
             </div>`)
             Bomb()
         }
-        Bomb(49)
+        var arrayBombe = Bomb(49)
         
 
     }
-    colorBlue()
+    colorCell(arrayBombe)
     
 }
 
@@ -60,18 +60,20 @@ function Bomb(numberCell) {
         if (!arrayBomb.includes(numberRandom)) {
             arrayBomb.push(numberRandom)
             
-
-    
         }
+
+         
     }
     console.log(arrayBomb.length);
     console.log(arrayBomb);
+    return arrayBomb
   
 }
 
 // colore le celle di blu al click
 
-function colorBlue() {
+function colorCell(arrayBombe) {
+    console.log(arrayBombe);
      const cells = document.querySelectorAll('.cells')
 
 
@@ -80,33 +82,25 @@ function colorBlue() {
         const cellElement = cells[i];
 
         cellElement.addEventListener('click', function () {
-         this.style.backgroundColor = 'cornflowerblue'
+         
+         console.log(this.textContent);
+          let number = parseInt(this.textContent) 
+          console.log(number);
+          if (arrayBombe.includes(number)) {
+
+            this.style.backgroundColor = 'red'
+            
+              
+          }else{
+            this.style.backgroundColor = 'cornflowerblue'
+          }
 
         });
 
   }
 }
+ // celle bomba
 
-function colorRed() {
-    let canpush = true;
-    let x = cells
-    for (let b = 0; b < arrayBomb.length; b++) {
-        if (arrayBomb !== x) {
-            arrayBomb.addEventListener('click', function () {
-                this.style.backgroundColor = 'red'
-       
-               });
-            canpush = false
-        } else {
-            canpush = true;
-        }
-    }
-    if (canpush) {
-        arrayBomb.push(x)
-    }
-    console.log(arrayBomb);
-    canpush = false;
-}
-
+ 
 
 
